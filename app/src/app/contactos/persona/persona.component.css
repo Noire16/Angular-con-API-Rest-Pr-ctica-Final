@@ -1,0 +1,97 @@
+#form {
+  width: 1200px;
+  height: 450px;
+  background-color: white;
+  border-style: dotted;
+  border-width: 2px;
+  border-color: #9ccc65;
+  border-radius: 10px;
+  margin: auto;
+}
+#fieldOne {
+  margin-top: 5px;
+  margin-bottom: 1px;
+  height: 400;
+}
+
+#fieldTwo {
+  margin-top: 25px;
+  height: 200px;
+}
+
+#fieldThree {
+  margin-top: 3px;
+  height: 200px;
+}
+
+#select {
+  margin-top: 30px;
+}
+
+.buttonSex {
+  margin: 10px;
+}
+
+#button {
+  margin-bottom: 1px;
+  text-align: center;
+}
+
+#eliminar {
+  background-color: red;
+  color: white;
+}
+.añadir {
+  background-color: #9ccc65;
+}
+
+#lista {
+  text-align: center;
+  background-color: #f0f4c3;
+}
+
+.objectList {
+  width: 1200px;
+}
+
+.listItem {
+  margin-left: 50px;
+  border-style: solid;
+  border-color: #9ccc65;
+}
+
+#sectionTwo {
+  width: 1200px;
+  height: 200px;
+  background-color: white;
+  border-style: dotted;
+  border-width: 2px;
+  border-color: #9ccc65;
+  border-radius: 10px;
+  margin: auto;
+}
+#h2 {
+  text-align: center;
+}
+
+.actualizar {
+  margin-left: 20px;
+  margin-top: 6px;
+  width: 300px;
+}
+
+#actualizarSexo {
+  margin-left: 20px;
+  margin-top: 6px;
+  width: 370px;
+}
+
+#botonActualizar {
+  margin-left: 45%;
+  border-width: 2px;
+  border-color: #9ccc65;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  background-color: #9ccc65;
+}

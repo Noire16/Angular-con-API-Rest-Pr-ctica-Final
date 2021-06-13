@@ -1,0 +1,19 @@
+body {
+  margin: 20px;
+}
+
+.agenda {
+  background-color: #f0f4c3;
+}
+
+.mat-toolbar-single-row {
+  padding-left: 575px;
+  background-color: #9ccc65;
+}
+.form-field {
+  padding: 500px;
+}
+
+#title {
+  text-align: center;
+}

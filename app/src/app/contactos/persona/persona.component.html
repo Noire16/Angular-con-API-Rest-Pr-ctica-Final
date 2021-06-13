@@ -1,0 +1,116 @@
+<section>
+    <form id="form" #formulario="ngForm" (submit)=" add (formulario) ">
+        <div>
+            <mat-grid-list cols="3" rowHeight="350px">
+                <mat-grid-tile>
+                    <div id="fieldOne">
+                        <mat-form-field>
+                            <mat-label>Nombre:</mat-label>
+                            <input matInput type="text" minlength="3" required="required" [ngModelOptions]="{standalone: true}" [(ngModel)]="contacto.name">
+                            <mat-error>
+                                Debe tener al menos 3 caracteres.
+                          </mat-error>
+                        </mat-form-field>
+                        <p></p>
+                        <mat-form-field>
+                            <mat-label>Apellidos:</mat-label>
+                            <input matInput type="text" minlength="3" required="required" [ngModelOptions]="{standalone: true}" [(ngModel)]="contacto.surnames">
+                            <mat-error>
+                                Debe tener al menos 3 caracteres.
+                          </mat-error>
+                        </mat-form-field>
+                        <p></p>
+                        <mat-form-field>
+                            <mat-label>Edad:</mat-label>
+                            <input matInput type="text" maxlength="3" required="required" [ngModelOptions]="{standalone: true}" [(ngModel)]="contacto.age">
+                            <mat-error>
+                                La edad debe estar comprendida entre 1 y 125.
+                          </mat-error>
+                        </mat-form-field>
+                        <p></p>
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div id="fieldTwo">
+                        <mat-form-field>
+                            <mat-label>DNI:</mat-label>
+                            <input matInput id="dni" type="text" minlength="3" maxlength="9" pattern="[0-9]{8}[A-Z,a-z]{1}" required="required" [ngModelOptions]="{standalone: true}" [(ngModel)]="contacto.dni">
+                            <mat-error>
+                                Introduzca su dni con letra.
+                          </mat-error>
+                        </mat-form-field>
+                        <p></p>
+                        <mat-form-field>
+                            <mat-label>Cumpleaños:</mat-label>
+                            <input matInput type="date" required="required" [ngModelOptions]="{standalone: true}" [(ngModel)]="contacto.birthday">
+                        </mat-form-field>
+                        <p></p>
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div id="fieldThree">
+                        <mat-form-field>Sexo:
+                            <mat-select id="Sexo" value="" required="required" [ngModelOptions]="{standalone: true}" [(ngModel)]="contacto.sex">
+                                <p></p>
+                                <mat-option class="buttonSex" name="sexo" value="Hombre">Hombre</mat-option>
+                                <p></p>
+                                <mat-option class="buttonSex" name="sexo" value="Mujer">Mujer</mat-option>
+                                <p></p>
+                                <mat-option class="buttonSex" name="sexo" value="Otro">Otro</mat-option>
+                                <p></p>
+                                <mat-option class="buttonSex" name="sexo"  value="No especificado">No especificado</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <p></p>
+                        <mat-form-field>
+                            <mat-label>Color Favorito:</mat-label>
+                                <input matInput type="text" minlength="3" required="required" [ngModelOptions]="{standalone: true}" [(ngModel)]="contacto.favouriteColour">
+                                <mat-error>
+                                    Debe tener al menos 3 caracteres.
+                                </mat-error>
+                        </mat-form-field>
+                    </div>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+        <div id="button">
+            <button mat-flat-button class="añadir" type="submit">Añadir contacto</button>
+        </div>
+    </form>
+</section>
+<p></p>
+<!-- <section *ngIf=" accion === 'actualizar' ">
+    <h2>Editar un usuario</h2>
+    <form (ngSubmit)="actualizarContacto" class="form" #editarForm="ngForm">
+        <input type="text" [(ngModel)]="contacto.name" name="name">
+        <input type="text" [(ngModel)]="contacto.surnames" name="surnames">
+        <input type="text" [(ngModel)]="contacto.age" name="age">
+        <input type="text" [(ngModel)]="contacto.dni" name="dni">
+        <input type="date" [(ngModel)]="contacto.birthday" name="birthday">
+        <input type="text" [(ngModel)]="contacto.favouriteColour" name="favouriteColour">
+        <input type="text" [(ngModel)]="contacto.sex" name="sex">
+        <input type="submit" value="Editar contacto">
+    </form>
+</section> -->
+<p></p>
+
+<section>
+    <mat-card id="lista">
+        <h2>Listado de contactos</h2>
+        <mat-divider></mat-divider>
+        <mat-list class="objectList" *ngIf=" contactos.length !== 0 "> 
+            <mat-list-item class="listItem" *ngFor= "let cadaContacto of contactos; let i= index">
+                <h3 matLine>{{cadaContacto.name}} {{cadaContacto.surnames}}</h3>
+                <p matLine>{{cadaContacto.age}}</p>
+                <p matLine>{{cadaContacto.dni}}</p>
+                <p matLine>{{cadaContacto.birthday}}</p>
+                <p matLine>{{cadaContacto.sex}}</p>
+                <p matLine>{{cadaContacto.favouriteColour}}</p>
+                <button mat-raised-button color="primary" (click)="editarContacto(cadaContacto._id)">Editar</button>
+                <button mat-raised-button id="eliminar" (click)="deleteContacto(cadaContacto._id)">Eliminar</button>
+                <mat-divider></mat-divider>
+            </mat-list-item>
+        </mat-list>
+    </mat-card>
+    
+</section>
